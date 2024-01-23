@@ -19,6 +19,17 @@ async def get_movies(date: datetime, theater_id: int = None):
             "Movie 2"
         ]
     }
+
+    - If no movies are found:
+    {
+          "movies": []
+    }
+
+    Example error response:
+    {
+        "error": "Internal Server error"
+    }
+
     """
     return {"movies": ["Movie 1", "Mocie 2"]}
 
@@ -33,9 +44,15 @@ async def get_theaters():
             "Theater 2"
         ]
     }
+
+    - If no theaters are found:
+    {
+          "theaters": []
+    }
+
     Example error response:
     {
-        "error": "Theaters not found"
+        "error": "Internal Server error"
     }
     """
     return {"theaters": ["Theater 1", "Theater 2"]}
@@ -51,9 +68,15 @@ async def get_showtimes(movie_id: int, theater_id: int, date: datetime):
             "Showtime 2"
         ]
     }
+
+    - If no showtimes are found:
+    {
+          "showtimes": []
+    }
+
     Example error response:
     {
-        "error": "Showtimes not found"
+        "error": "Internal Server error"
     }
     """
     return {"showtimes": ["Showtime 1", "Showtime 2"]}

@@ -18,18 +18,28 @@ async def make_reservation(showtime_id: int, seat_number: str):
         "Result": "Success",
         "reservation_id": XXX
     }
+
     Example error response:
+
     {
         "error": "Showtime not found"
     }
-    Example error response:
+    Status code : 404 not found
+
     {
         "error": "Seat not found"
     }
-    Example error response:
+    Status code : 404 not found
+
     {
         "error": "Showtime ID is required"
     }
+    Status code: 400 Bad Request
+
+    {
+        "error": "Internal server error"
+    }
+    Status code : 500 Internal Server Error
     """
     return {"Result": "Success", "reservation_id": 123}
 
@@ -50,13 +60,16 @@ async def get_reservations(user_id: int):
     {
         "error": "User not found"
     }
-    Example error response:
+    Status code : 404 not found
+
     {
         "error": "Invalid user ID"
     }
-    Example error response:
+    Status code: 400 Bad Request
+
     {
         "error": "User ID is required"
     }
+    Status code: 400 Bad Request
     """
     return {"reservations": ["Reservation 1", "Reservation 2"]}

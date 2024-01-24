@@ -78,5 +78,6 @@ async def get_showtimes(movie_id: int, theater_id: int, date: datetime):
     {
         "error": "Internal Server error"
     }
+    Status code: 400 Bad Request
     """
     return {"showtimes": ["Showtime 1", "Showtime 2"]}

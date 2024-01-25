@@ -5,3 +5,8 @@ __pycache__/
 
 .vscode
 .env
+.vscode-server
+
+.bashrc
+.bashrc_logout
+.profile

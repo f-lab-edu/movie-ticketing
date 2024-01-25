@@ -1,0 +1,19 @@
+FROM python:3.11.7-slim as requirements-stage
+
+WORKDIR /app
+
+# 의존성 설치
+RUN pip install "poetry==1.7.1"
+
+COPY . .
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-interaction
+
+# RUN adduser --disabled-password --gecos '' appuser
+# USER appuser
+
+RUN apt-get update && apt-get install -y  --no-install-recommends sudo git \
+    && apt-get clean
+
+# FastAPI 서버 실행.
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

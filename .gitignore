@@ -2,3 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
+.vscode
+.env
+.vscode-server
+
+.bashrc
+.bashrc_logout
+.profile
